@@ -21,7 +21,7 @@ public class Script6 {
 	RemoteWebDriver driver;
 	
   @Test
-  public void KhanAcademy_Explore_Economy() throws InterruptedException
+  public void KhanAcademy_Explore_Economics() throws InterruptedException
   {
 	  Thread.sleep(3000);
 	  driver.findElement(AppiumBy.accessibilityId("Search tab")).click();
@@ -35,6 +35,7 @@ public class Script6 {
 	  String actual = driver.findElement(AppiumBy.androidUIAutomator("UiSelector().text(\"Interest and debt\")")).getText();
 	  System.out.println(actual);
 	  Assert.assertEquals(expected, actual);
+	  Thread.sleep(3000);
 	  
 	  //click Home
 	  driver.findElement(AppiumBy.accessibilityId("Explore tab")).click();

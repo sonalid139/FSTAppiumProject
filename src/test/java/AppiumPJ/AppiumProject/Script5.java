@@ -17,17 +17,17 @@ import io.appium.java_client.AppiumBy;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 
-public class Script7 
+public class Script5 
 {
 	RemoteWebDriver driver;
 	
 	  @Test
-	  public void KhanAcademy_Explore_LifeSkills() throws InterruptedException
+	  public void KhanAcademy_Explore_Science() throws InterruptedException
 	  {
 		Thread.sleep(3000);
 		driver.findElement(AppiumBy.accessibilityId("Search tab")).click();
 		Thread.sleep(3000);
-		driver.findElement(AppiumBy.androidUIAutomator("UiSelector().text(\"Life skills\")")).click();
+		driver.findElement(AppiumBy.androidUIAutomator("UiSelector().text(\"Science\")")).click();
 		Thread.sleep(3000);
 		  
 		Dimension d= driver.manage().window().getSize();
@@ -38,30 +38,25 @@ public class Script7
 		int x2=width/2;
 		int y2=(int) (height * 0.4);
 
-		while(driver.findElements(AppiumBy.androidUIAutomator("UiSelector().text(\"Camp Khan\")")).size()==0) 
+		while(driver.findElements(AppiumBy.androidUIAutomator("UiSelector().text(\"Class 12 Biology (India)\")")).size()==0) 
 		{
 			driver.executeScript("mobile:shell", ImmutableMap.of("command","input swipe "+x1+" "+y1+" "+x2+" "+y2));
 			Thread.sleep(3000);
 		}
-		driver.findElement(AppiumBy.androidUIAutomator("UiSelector().text(\"Camp Khan\")")).click();
+		driver.findElement(AppiumBy.androidUIAutomator("UiSelector().text(\"Class 12 Biology (India)\")")).click();
 		Thread.sleep(3000);
 		
-		driver.findElement(AppiumBy.androidUIAutomator("UiSelector().text(\"Camp Khan 2021\")")).click();
-		Thread.sleep(3000);
-		
-		driver.findElement(AppiumBy.androidUIAutomator("UiSelector().text(\"Camp Khan program overview\")")).click();
-		Thread.sleep(3000);
 		
 		//check whether page is displayed
-		String expected = "Camp Khan program overview";
-		String actual = driver.findElement(AppiumBy.androidUIAutomator("UiSelector().text(\"Camp Khan program overview\")")).getText();
+		String expected = "Reproduction";
+		String actual = driver.findElement(AppiumBy.androidUIAutomator("UiSelector().text(\"Reproduction\")")).getText();
 		System.out.println(actual);
 		Assert.assertEquals(expected, actual);
 		Thread.sleep(3000);  
 		
 		//click Home
 		driver.findElement(AppiumBy.accessibilityId("Explore tab")).click();
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 	  }	  
 	  
 	  @BeforeClass
